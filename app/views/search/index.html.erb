@@ -1,0 +1,33 @@
+<h1>Magic TV</h1>
+
+<p>Find remotes for your TV, TVs for your remote!</p>
+
+<%= form_with url: search_url, method: :get, local: true do |form| %>
+  <%= form.text_field :q, value: params[:q],
+      label: { text: 'Search', hidden: true },
+      hint_text: 'Separate search terms with a space' %>
+
+  <%= form.submit 'Search' %>
+  <% if search_terms.any? %>
+    <%= link_to 'Clear search', search_path %>
+  <% end %>
+<% end %>
+
+<% if search_terms.any? %>
+  <h2>TVs</h2>
+  <%= render "tvs/rows", tvs: @tvs.all %>
+
+  <h2>Remote controls</h2>
+  <%= render "remotes/rows", remotes: @remotes.all %>
+
+  <% if @tvs.any? || @remotes.any? %>
+    <%= link_to 'Download CSV', search_download_path(q: params[:q]) %>
+  <% end %>
+
+<% end %>
+
+<%#= render "individuals/rows",
+  individuals: @individuals,
+  caption: "Found #{pluralize(@individuals.total_entries, 'individual')}",
+  search_terms: search_terms %>
+

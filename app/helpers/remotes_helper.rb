@@ -1,2 +1,0 @@
-module RemotesHelper
-end

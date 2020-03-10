@@ -2,27 +2,7 @@
 
 <h1>Tvs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Make</th>
-      <th>Model</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tvs.each do |tv| %>
-      <tr>
-        <td><%= tv.make %></td>
-        <td><%= tv.model %></td>
-        <td><%= link_to 'Show', tv %></td>
-        <td><%= link_to 'Edit', edit_tv_path(tv) %></td>
-        <td><%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render "tvs/rows", tvs: @tvs %>
 
 <br>
 
