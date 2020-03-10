@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<!-- Try to highlight TVs that match this remote's brand -->
+<% search_terms = @remote.name.split %>
+
+<h2>Remote Control</h2>
+<p>
+  <strong>Name:</strong>
+  <%= @remote.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @remote.description %>
+</p>
+
+<h2>TVs</h2>
+
+<% @remote.tvs.each do |tv| %>
+  <p>
+    <strong><%= highlight(tv.make, search_terms) %></strong>
+    (<%= tv.model %>) <%= link_to('Show', tv_path(tv)) %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_remote_path(@remote) %> |
+<%= link_to 'Back', remotes_path %>

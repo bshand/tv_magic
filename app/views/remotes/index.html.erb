@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Remotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remotes.each do |remote| %>
+      <tr>
+        <td><%= remote.name %></td>
+        <td><%= remote.description %></td>
+        <td><%= link_to 'Show', remote %></td>
+        <td><%= link_to 'Edit', edit_remote_path(remote) %></td>
+        <td><%= link_to 'Destroy', remote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Remote', new_remote_path %>

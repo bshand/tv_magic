@@ -1,0 +1,2 @@
+module RemotesHelper
+end
