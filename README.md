@@ -5,6 +5,7 @@ This code contains intentional bugs and security flaws.
 **1. To get started and set up your development environment:**
 
     git clone https://github.com/bshand/tv_magic
+    cd tv_magic
     bundle install
     yarn install
     bin/rails db:create db:migrate db:seed
