@@ -1,5 +1,6 @@
 class RemotesController < ApplicationController
   before_action :set_remote, only: [:show, :edit, :update, :destroy]
+  before_action :set_tvs, only: [:new, :edit]
 
   # GET /remotes
   # GET /remotes.json
@@ -67,8 +68,12 @@ class RemotesController < ApplicationController
       @remote = Remote.find(params[:id])
     end
 
+    def set_tvs
+      @tvs = Tv.all
+    end
+
     # Only allow a list of trusted parameters through.
     def remote_params
-      params.require(:remote).permit(:name, :description)
+      params.require(:remote).permit(:name, :description, :tv_ids => [])
     end
 end

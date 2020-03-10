@@ -18,7 +18,11 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, size: 80 %>
+  </div>
+
+  <div class="field">
+    <%= collection_check_boxes(:remote, :tv_ids, @tvs, :id, :make_and_model) %>
   </div>
 
   <div class="actions">
