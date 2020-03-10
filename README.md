@@ -7,12 +7,12 @@ This code contains intentional bugs and security flaws.
     git clone https://github.com/bshand/tv_magic
     bundle install
     yarn install
-    rake db:create db:migrate db:seed
-    rake test
+    bin/rails db:create db:migrate db:seed
+    bin/rails test
 
 **2. Try running the rails server**
 
-    rails s
+    bin/rails s
 and point your browser to the application homepage, e.g. http://localhost:3000/
 
 **3. Try to hack the server!**
@@ -41,12 +41,10 @@ Other things that this code doesn't really illustrate, but probably should
 
 **4. Find out more about Rails security**
 
-Read [Ruby on Rails Security Cheatsheet]
-  (https://cheatsheetseries.owasp.org/cheatsheets/Ruby_on_Rails_Cheatsheet.html),
-with further reading at the end, and
-[The Official Rails Security Guide]
-  (https://guides.rubyonrails.org/security.html),
-use tools such as [Brakeman] (https://brakemanscanner.org), `bundle audit` and
-[rubocop] (https://github.com/rubocop-hq/rubocop) to identify common
-bugs in your code, and use manual code review to identify and fix other
-vulnerabilities.
+Read the Ruby on Rails Security Cheatsheet
+(https://cheatsheetseries.owasp.org/cheatsheets/Ruby_on_Rails_Cheatsheet.html),
+with further reading at the end, and the Official Rails Security Guide
+(https://guides.rubyonrails.org/security.html), use tools such as Brakeman
+(https://brakemanscanner.org), `bundle audit` and rubocop
+(https://github.com/rubocop-hq/rubocop) to identify common bugs in your code,
+and use manual code review to identify and fix other vulnerabilities.

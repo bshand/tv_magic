@@ -11,9 +11,4 @@ class SearchControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get test" do
-    get search_test_url
-    assert_response :success
-  end
-
 end
