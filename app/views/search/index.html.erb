@@ -1,6 +1,8 @@
-<h1>Magic TV</h1>
+<!-- Client wants Magic TV rebranded WillItWorkWithMyTV 2020-03-10 -->
+<!-- <h1>Magic TV</h1> -->
+<h1>WillItWorkWithMyTV</h1>
 
-<p>Find remotes for your TV, TVs for your remote!</p>
+<p>Find remotes for your TV, and TVs for your remote!</p>
 
 <%= form_with url: search_url, method: :get, local: true do |form| %>
   <%= form.text_field :q, value: params[:q],
@@ -24,10 +26,13 @@
     <%= link_to 'Download CSV', search_download_path(q: params[:q]) %>
   <% end %>
 
+  <h2> Can't find what you're looking for?</h2>
+  <p>
+    <%= link_to 'List all TVs', tvs_path %> |
+    <%= link_to 'New TV', new_tv_path %>
+  </p>
+  <p>
+    <%= link_to 'List all remote controls', remotes_path %> |
+    <%= link_to 'New Remote', new_remote_path %>
+  </p>
 <% end %>
-
-<%#= render "individuals/rows",
-  individuals: @individuals,
-  caption: "Found #{pluralize(@individuals.total_entries, 'individual')}",
-  search_terms: search_terms %>
-
